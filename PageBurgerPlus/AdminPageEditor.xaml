@@ -1,0 +1,72 @@
+﻿<Page x:Class="BurgerPlus.PageBurgerPlus.AdminPageEditor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BurgerPlus.PageBurgerPlus"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPageEditor">
+
+    <Grid Margin="20">
+        <DataGrid x:Name="UsersGrid" AutoGenerateColumns="False" Margin="0,0,0,45" IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="40"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login}" Width="100"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}" Width="120"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="100"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding IdRole}" Width="40"/>
+                <DataGridCheckBoxColumn Header="Активен" Binding="{Binding is_active}" Width="60"/>
+                <DataGridTextColumn Header="Попытки" Binding="{Binding failed_attempts}" Width="60" IsReadOnly="True"/>
+
+                <DataGridTemplateColumn Header="Статус" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text" Value="Активен"/>
+                                        <Setter Property="Foreground" Value="Green"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding is_locket}" Value="True">
+                                                <Setter Property="Text" Value="Заблокирован"/>
+                                                <Setter Property="Foreground" Value="Red"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Действие" Width="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Разблокировать" Click="Unlock_Click" Tag="{Binding id}" Width="100" Height="22">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding is_locket}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+
+
+            <Button Content="Сохранить" Width="80" Margin="5" Height="30" Click="Button_Click"/>
+            <Button Content="Отмена" Width="80" Margin="5" Height="30" Click="Back_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>

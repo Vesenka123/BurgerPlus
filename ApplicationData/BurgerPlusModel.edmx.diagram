@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d67f1281d22049a6bafca225b805b796" Name="Diagram1">
+        <EntityTypeShape EntityType="BurgerPlusModel.Customers" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Material" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Order" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Product" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Production" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Specification" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.user" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Cost_Calculatior" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BurgerPlusModel.Price" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Order_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Cost_Calculatior_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Price_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Production_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Specification_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Cost_Calculatior_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Price_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Production_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="BurgerPlusModel.FK_Specification_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
